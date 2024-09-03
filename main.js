@@ -2,25 +2,24 @@ const form = document.getElementById('form');
 let numberA = document.getElementById("numberA");
 let numberB = document.getElementById("numberB");
 
-function Bmenor() {
-    const Bmenor = document.getElementById('Bmenor');
+let Bmenor = document.getElementById('Bmenor');
+let Bmaior = document.getElementById('Bmaior');
 
+function incorreto() {
     Bmenor.style.display = 'block';
+    Bmaior.style.display = 'none';
 }
 
-function Bmaior() {
-    const Bmaior = document.getElementById('Bmaior');
-
+function correto() {
     Bmaior.style.display = 'block';
+    Bmenor.style.display = 'none';
 }
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-        if(numberA.valueAsNumber >= numberB.valueAsNumber) {
-            Bmenor()
-        }
-
-            else {
-                Bmaior()
-            }
-});
+    if(numberA.value >= numberB.value) {
+        incorreto()
+    } else {
+        correto()
+    }
+    });
